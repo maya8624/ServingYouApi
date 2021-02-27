@@ -14,10 +14,10 @@ namespace ServingyouApi.Data
         {
         }
 
-        public DbSet<Booking> Booking { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
         public DbSet<Member> Members { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderMenu> OrderMenu { get; set; }
-        public DbSet<Menu> Menu { get; set; }
+        public DbSet<OrderMenu> OrderMenus { get; set; }
+        public DbSet<Menu> Menus { get; set; }
     }
 }

@@ -44,13 +44,13 @@ namespace ServingyouApi.Data
                 throw new ArgumentNullException(nameof(orderMenu));
             }
 
-            await context.OrderMenu.AddAsync(orderMenu);
+            await context.OrderMenus.AddAsync(orderMenu);
         }
                 
 
         public async Task<Menu> GetMenuAsync(int id)
         {
-            return await context.Menu.SingleOrDefaultAsync(m => m.Id == id);
+            return await context.Menus.SingleOrDefaultAsync(m => m.Id == id);
         }
 
         public async Task<bool> SaveChangesAsync()

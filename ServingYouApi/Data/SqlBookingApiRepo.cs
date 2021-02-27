@@ -23,17 +23,17 @@ namespace ServingyouApi.Data
                 throw new ArgumentNullException(nameof(booking));
             }
 
-            await context.Booking.AddAsync(booking);        
+            await context.Bookings.AddAsync(booking);        
         }
 
         public async Task<IEnumerable<Booking>> GetAllAsync()
         {
-            return await context.Booking.ToListAsync();           
+            return await context.Bookings.ToListAsync();           
         }
 
         public async Task<Booking> GetBookingAsync(int id)
         {
-            var booking = await context.Booking.SingleOrDefaultAsync(b => b.Id == id);
+            var booking = await context.Bookings.SingleOrDefaultAsync(b => b.Id == id);
             return booking;
         }
 
