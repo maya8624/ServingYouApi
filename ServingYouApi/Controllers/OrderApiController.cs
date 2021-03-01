@@ -54,12 +54,16 @@ namespace ServingyouApi.Controllers
             
             // get member Id
             var member = await memberApiRepo.GetMemberByEmailAsync(orderCreateDto.Email);
+            if (member == null)
+            {
+                return NotFound("Member is not found.");
+            }
+
             order.MemberId = member.Id;
 
             await repository.PostOrderAsync(order);
             await repository.SaveChangesAsync();
-
-            
+                        
             var orderMenus = orderCreateDto.OrderMenus;
 
             foreach (var item in orderMenus)
